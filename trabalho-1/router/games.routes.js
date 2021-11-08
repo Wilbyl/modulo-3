@@ -1,21 +1,18 @@
 const express= require("express");
 const router = express.Router();
 
-const lista = [
+const lista =[
     {
-        nome:"warcraft 3",
-        genero:"rpg",
-        ano:"2004"
-    },{
-        nome:"dora 2",
-        genero:"moba",
-        ano:"2013"
-    },{
-        nome:"league of legends",
-        genero:"moba",
-        ano:"2009",
+        id: Date.now(),
+        Titulo: "halo 4",
+        empresa: 'blue',
+        logo: 'https://cdn.akamai.steamstatic.com/steam/apps/1064273/capsule_616x353.jpg?t=1605671186',
+        salario: '8,9',
+       
+        descricao: 'A mente do Master Chief foi invadida por um poderoso inimigo, que em busca de sua fraqueza, acaba encontrando a fonte de sua força.'
+
     }
-];
+]
 
 router.get('/', (req, res) => {
     res.send(lista);
@@ -23,18 +20,18 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const idParam = req.params.id;
-    const lista = vagas.find(lista => lista.id == idParam);
-    res.send(lista);
+    const listas = lista.find(listas => listas.id == idParam);
+    res.send(listas);
 });
 
 router.post('/add', (req, res) => {
     
-    const lista = req.body;
-    lista.id = Date.now();
-    vagas.push(lista);
+    const listas = req.body;
+    listas.id = Date.now();
+    vagas.push(listas);
     res.status(201).send({
         message: 'Cadastro com sucesso',
-        data: lista
+        data: listas
     });
 });
 
@@ -47,8 +44,6 @@ router.put('/edit/:id', (req, res) => {
     
     let index = lista.findIndex(lista => lista.id == idParam);
 
-    // spread operator ...
-    // faz um espelho do item na lista e um espelho do objeto atualizado e junta os 2
     lista[index] = {
         ...lista[index],
         ...listaEdit
@@ -62,7 +57,7 @@ router.put('/edit/:id', (req, res) => {
 
 
 router.delete('/delete/:id', (req, res) => {
-    // acessamos o id recebido via parametro
+    
     const idParam = req.params.id;
 
     const index = lista.findIndex(lista => lista.id == idParam);
