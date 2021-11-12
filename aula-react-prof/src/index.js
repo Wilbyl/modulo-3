@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Header from './componente/header/header.css';
+import Header from './components/Header/Header';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,4 +11,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
