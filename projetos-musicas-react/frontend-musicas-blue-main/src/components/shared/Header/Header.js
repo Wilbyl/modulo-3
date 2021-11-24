@@ -1,18 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <nav className="navbar  navbar-expand-lg navbar-light bg-primary w-100">
       <div className="container">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <Link className="navbar-brand" to="/">
@@ -34,7 +26,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
